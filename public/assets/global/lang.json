@@ -1,0 +1,16 @@
+{
+    "sProcessing": "<span class='sr-only'>Loading...</span>",
+    "sZeroRecords": "Tidak ditemukan data yang sesuai",
+    "sLengthMenu": "Tampilkan _MENU_ entri",
+    "sInfo": "Tampil _START_ s/d _END_ dari _TOTAL_ entri",
+    "sInfoEmpty": "Tampil 0 s/d 0 dari 0 entri",
+    "sInfoFiltered": "(disaring dari _MAX_ entri)",
+    "oPaginate": {
+        "sFirst": "<i class='mdi mdi-chevron-double-left'></i>",
+        "sPrevious": "<i class='mdi mdi-chevron-left'></i>",
+        "sNext": "<i class='mdi mdi-chevron-right'></i>",
+        "sLast": "<i class='mdi mdi-chevron-double-right'></i>"
+    },
+    "sSearch": "_INPUT_",
+    "sSearchPlaceholder": "Pencarian..."
+}

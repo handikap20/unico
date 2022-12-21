@@ -1,0 +1,10 @@
+{
+    "require": {
+        "kriswallsmith/buzz": "^1.2",
+        "nyholm/psr7": "^1.3"
+    },
+    "require-dev": {
+        "kenjis/ci-phpunit-test": "^0.18.0",
+        "phpunit/phpunit": "4.* || 5.*"
+    }
+}

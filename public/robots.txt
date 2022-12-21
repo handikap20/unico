@@ -1,0 +1,21 @@
+User-agent: Googlebot
+Disallow: /*.php$
+Disallow: /*.inc$
+Disallow: /*.swf$
+Disallow: /*.zip$
+Disallow: /*?*
+Disallow: /*?
+Disallow: /assets/
+Disallow: /assets/images/
+
+User-agent: Googlebot-Image
+Disallow: /assets/images/
+
+User-agent: Twitterbot
+Disallow: *
+Allow: /assets/images/favicon/
+
+User-agent: *
+Disallow: /assets/
+
+Sitemap: http://localhost/sitemap.xml
