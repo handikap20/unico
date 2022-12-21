@@ -11,9 +11,7 @@
 .navbar a .material-icons {
   font-size:28px;
 }
-h4 {
-  margin-left: -25px;
-}
+
 #content {
   padding: 10px 10px 90px 10px;
   background-color: white;
@@ -41,7 +39,7 @@ h4 {
 font-weight: bold;
 }
 
-#login {
+#submit-btn {
 float: right;
 }
 

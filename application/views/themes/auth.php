@@ -46,7 +46,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="<?= $global_custom_path?>/css/custom.css">
+    <link rel="stylesheet" href="<?= $global_custom_path?>/css/custom.css?v=20">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
@@ -58,7 +58,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/bootstrap-show-password@1.2.1/dist/bootstrap-show-password.min.js"></script>
 
-    <script src="<?= $global_plugin_path ?>/bootbox/bootbox.js?v=3"></script>
+    <script src="<?= $global_plugin_path ?>/bootbox/bootbox.js?v=6"></script>
 
     <script type="text/javascript">
     var uri_dasar = '<?= base_url() ?>';
@@ -74,7 +74,7 @@
     </script>
 
     <script src="<?= $global_plugin_path ?>/auto-csrf/auto-csrf.min.js"></script>
-    <script src="<?= $global_custom_path ?>/js/FormAjax.init.js?v=3"></script>
+    <script src="<?= $global_custom_path ?>/js/FormAjax.init.js?v=11"></script>
 
 </head>
 

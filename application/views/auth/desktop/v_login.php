@@ -16,7 +16,7 @@
             </div>
             <div class="form-group">
                 <a href="" id="link-text">Forgot Password</a>
-                <button type="submit" class="btn btn-primary" id="login">Log in</button>
+                <button type="submit" class="btn btn-primary"  id="submit-btn" >Log in</button>
             </div>
             <div class="form-group text-center">
                 <p id="footer-text">Don't have account? <br>
@@ -32,7 +32,6 @@ $('#formAjax').submit(function(e) {
     e.preventDefault();
     option_save = {
         submit_btn: $('#submit-btn'),
-        spinner: $('#spinner-status'),
         url: $(this).attr('action'),
         data: $(this).serialize(),
         redirect: "<?= base_url('auth') ?>"

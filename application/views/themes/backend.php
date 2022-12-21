@@ -50,7 +50,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="<?= $global_custom_path?>/css/custom.css?v=15">
+    <link rel="stylesheet" href="<?= $global_custom_path?>/css/custom.css?v=16">
     <?php foreach ($css as $file) { ?>
     <link rel="stylesheet" href="<?php echo $file; ?>" type="text/css" />
     <?php } ?>

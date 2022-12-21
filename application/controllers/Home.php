@@ -139,12 +139,12 @@ class Home extends Backend_Controller {
                 }
                 $response = array(
                     'status' => TRUE,
-                    'message' => '<i class="lni lni-checkmark text-success"></i> Save Success.'
+                    'message' => '<b>Save Success</b>'
                 );
             } else {
                 $response = array(
                     'status' => FALSE,
-                    'message' => '<i class="ti-close text-danger"></i>Save Failed.'
+                    'message' => '<b>Save Failed</b>'
                 );
             }
         } else {
@@ -157,7 +157,7 @@ class Home extends Backend_Controller {
         if ($response) {
             $this->output->set_output(json_encode($response));
         } else {
-            $this->output->set_output(json_encode(['message' => FALSE, 'msg' => 'Failed get data.']));
+            $this->output->set_output(json_encode(['message' => FALSE, 'msg' => '<b>Failed get data</b>']));
         }
     }
 
@@ -165,7 +165,7 @@ class Home extends Backend_Controller {
     {
         $this->output->unset_template();
         $data_ = array();
-        $data = $this->m_users->findAll();
+        $data = $this->m_users->where(["id != '$this->_user_id'" => NULL])->findAll();
         foreach($data as $row) {
             $data_[] = [
                 'id' => encrypt_url($row->id,$this->id_key),
@@ -178,12 +178,12 @@ class Home extends Backend_Controller {
             $this->result = array(
                 'status'   => TRUE,
                 'data' => $data_,
-                'message' => 'Success get data.'
+                'message' => '<b>Success get data</b>'
             );
         }else {
             $this->result = array(
                 'status'   => FALSE,
-                'message' => 'Data not found'
+                'message' => '<b>Data not found</b>'
             );
         }
       

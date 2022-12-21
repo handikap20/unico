@@ -24,7 +24,7 @@
                     name="confirm_password" />
             </div>
             <div class="form-group">
-                <button type="submit" id="submit_btn" class="btn btn-primary col-12 mt-3" id="save"
+                <button type="submit" class="btn btn-primary col-12 mt-3" id="save"
                     name="save">Save</button>
 
             </div>
@@ -36,8 +36,7 @@
 $('#formAjax').submit(function(e) {
     e.preventDefault();
     option_save = {
-        submit_btn: $('#submit-btn'),
-        // spinner: $('#laoder'),
+        submit_btn: $('#save'),
         url: $(this).attr('action'),
         data: $(this).serialize(),
         redirect: "<?= base_url('users_list') ?>"

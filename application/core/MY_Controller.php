@@ -75,7 +75,7 @@ class Backend_Controller extends MY_Controller
         $this->_user_id = $this->session->userdata('unico_users_id');
 
         if($this->loggedin == FALSE){
-			show_msg('Anda belum login', false, 'auth');
+			show_msg('You are not logged in', false, 'auth');
 		}
 
         $this->load->section('footer', 'backend/_includes/footer');

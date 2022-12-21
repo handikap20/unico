@@ -23,7 +23,7 @@
                     <input type="password" class="form-control" id="confirm_password" data-toggle="password" name="confirm_password"/>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary col-12 mt-3" id="register"
+                    <button type="submit" class="btn btn-primary col-12 mt-3" id="submit-btn"
                         name="register">Register</button>
                 </div>
             <?=  form_close(); ?>
@@ -35,7 +35,6 @@ $('#formAjax').submit(function(e) {
     e.preventDefault();
     option_save = {
         submit_btn: $('#submit-btn'),
-        spinner: $('#spinner-status'),
         url: $(this).attr('action'),
         data: $(this).serialize(),
         redirect: "<?= base_url('auth') ?>"

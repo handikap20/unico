@@ -24,10 +24,8 @@ class Auth extends Login_Controller {
             redirect('home');    
         }
         if($mobile){
-            // var_dump($mobile);
             $this->data['is_mobile'] = TRUE;
             $this->load->view('auth/mobile/v_login', $this->data);  
-
         }else{
             $this->load->view('auth/desktop/v_login', $this->data);  
         }
@@ -53,12 +51,12 @@ class Auth extends Login_Controller {
                 $this->m_users->unico_session_register($auth);
                 $data = array(
                     'status' => TRUE,
-                    'message' => '<i class="lni lni-checkmark text-success"></i> Login Success.'
+                    'message' => '<b>Login Success</b>',
                 );
             } else {
                 $data = array(
                     'status' => FALSE,
-                    'message' => '<i class="ti-close text-danger"></i>Email or password wrong.'
+                    'message' => '<b>Email or password wrong</b>',
                 );
             }
         } else {
@@ -81,7 +79,7 @@ class Auth extends Login_Controller {
         $this->output->unset_template();
         $this->form_validation->set_rules('first_name', 'First Name', 'trim|required|min_length[5]|max_length[50]');
         $this->form_validation->set_rules('last_name', 'Last Name', 'trim|required|min_length[5]|max_length[50]');
-        $this->form_validation->set_rules('email', 'Email', 'trim|required|min_length[5]|max_length[50]');
+        $this->form_validation->set_rules('email', 'Email', 'is_unique[users.email]|trim|required|min_length[5]|max_length[50]');
         $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]|max_length[35]');
         $this->form_validation->set_rules('confirm_password', 'Confirm Password', 'trim|required|min_length[8]|max_length[35]|matches[password]');
         $this->form_validation->set_error_delimiters(error_delimeter(1), error_delimeter(2));
@@ -93,12 +91,14 @@ class Auth extends Login_Controller {
             if ($this->return) {
                 $response = array(
                     'status' => TRUE,
-                    'message' => '<i class="lni lni-checkmark text-success"></i> Register Success.'
+                    'message' => '<b>Congratulations !<br> Registration is successful</b>',
+                    'msgLabel' => 'Log In',
+                    'redirect' => base_url('auth'),
                 );
             } else {
                 $response = array(
                     'status' => FALSE,
-                    'message' => '<i class="ti-close text-danger"></i>Register Failed.'
+                    'message' => '<b>Oops !<br> Registration failed, Please check your data',
                 );
             }
         } else {
@@ -111,7 +111,7 @@ class Auth extends Login_Controller {
         if ($response) {
             $this->output->set_output(json_encode($response));
         } else {
-            $this->output->set_output(json_encode(['message' => FALSE, 'msg' => 'Failed get data.']));
+            $this->output->set_output(json_encode(['message' => FALSE, 'msg' => '<b>Failed get data</b>']));
         }
         
     }
@@ -122,9 +122,9 @@ class Auth extends Login_Controller {
             $this->m_users->unico_session_destroy();
             $this->data['page_title'] = "Logout";
             $this->data['page_description'] = "Halaman Logout.";
-            redirect('auth', 'refresh');
+            show_msg('<b>Session ended</b>', false, base_url('auth'));
         } else {
-            redirect('auth', 'refresh');
+            show_msg('<b>Session ended</b>', false, base_url('auth'));
         } 
     }
 
@@ -141,11 +141,9 @@ class Auth extends Login_Controller {
                $this->data['is_mobile'] = TRUE;
                $this->load->view('auth/mobile/v_register', $this->data);  
         }else{
-
             $this->load->view('auth/desktop/v_register', $this->data);  
         }
     }
-
 }
 
 /* End of file Auth.php */

@@ -68,6 +68,7 @@
         bootbox.alert({
             size: "small",
             message: "<?= $message ?>",
+             response: 404,
             callback: function() {
                 window.location.replace("<?= $link_ok ?>");
             }

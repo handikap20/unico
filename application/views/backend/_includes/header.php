@@ -1,5 +1,5 @@
 <nav class="navbar navbar-light bg-white navbar-expand top-navbar">
-    <a href="<?= (!empty($url_back)) ? base_url($url_back) : base_url('home');?>">
+    <a href="<?= (!empty($url_back)) ? base_url($url_back) : base_url('home');?>" style="position:fixed;">
         <i class="material-icons">navigate_before</i>
     </a>
     <ul class="navbar-nav nav-justified w-100">

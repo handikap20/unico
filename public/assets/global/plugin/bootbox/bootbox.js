@@ -146,7 +146,11 @@
     // Append "multiple" property to the select when using the "prompt" helper
     multiple: false,
     // Automatically scroll modal content when height exceeds viewport height
-    scrollable: false
+    scrollable: false,
+    // set response 
+    response: '',
+    // msg label button  
+    msgLabel: false,
   };
 
 
@@ -277,7 +281,6 @@
 
         switch (key) {
           case 'ok':
-            button.addClass('bootbox-cancel');
           case 'confirm':
             button.addClass('bootbox-accept');
             break;
@@ -287,7 +290,11 @@
             break;
         }
 
-        button.html(b.label);
+        if(options.msgLabel != false){
+          button.html(options.msgLabel);
+        }else{
+          button.html(b.label);
+        }
         footer.append(button);
 
         callbacks[key] = b.callback;
@@ -332,6 +339,7 @@
           break;
       }
     }
+    
 
     if (options.scrollable) {
       innerDialog.addClass('modal-dialog-scrollable');
@@ -1076,11 +1084,19 @@
         }
 
         if (total <= 2 && isPrimary) {
+
+          if (options.response == 404) {
+            button.className = 'btn-danger';
+          }else{
+            button.className = 'btn-primary';
+          }
+          // buttons.html(options.msgLabel);
+
           // always add a primary to the main option in a one or two-button dialog
-          button.className = 'btn-outline-info';
+          // button.className = 'btn-outline-info';
         } else {
           // adding both classes allows us to target both BS3 and BS4 without needing to check the version
-          button.className = 'btn-secondary btn-default';
+          // button.className = 'btn-secondary btn-default';
         }
       }
     });

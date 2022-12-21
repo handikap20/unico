@@ -46,10 +46,17 @@ function btn_save_form(option) {
       option.beforeSend();
     },
     success: function (data) {
+      let response = 200;
+      if(data.status == false){
+        response = 404;
+      }
+
       option.afterSend();
       bootbox.alert({
         title: "Notifikasi",
         message: data.message,
+        response: response,
+        msgLabel: data.msgLabel,
         centerVertical: true,
         callback: function (result) {
           if (data.error !== undefined) {
@@ -68,6 +75,7 @@ function btn_save_form(option) {
               if (option.table) {
                 option.table.ajax.reload();
               } else {
+
                 option.onSuccess(data);
                 if (data.redirect_link != undefined) {
                   location.replace(data.redirect_link);

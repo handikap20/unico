@@ -30,5 +30,19 @@ if (!function_exists('show_msg')) {
     }
 }
 
+if (!function_exists('img_color_bottom_nav')) {
+    function img_color_bottom_nav($url1='', $url2='')
+    {
+        $array = array('home','cart','profile');
+        if(!in_array($url1, $array)){
+            return "_black";
+        }
+        if(!in_array($url1, $array)){
+            return "_black";
+        }
+    }
+}
+
+
 
 ?>

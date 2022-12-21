@@ -36,8 +36,7 @@
 $('#formAjax').submit(function(e) {
     e.preventDefault();
     option_save = {
-        submit_btn: $('#submit-btn'),
-        // spinner: $('#laoder'),
+        submit_btn: $('#save'),
         url: $(this).attr('action'),
         data: $(this).serialize(),
         redirect: "<?= base_url('users_list') ?>"
