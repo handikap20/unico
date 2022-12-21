@@ -29,15 +29,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="row">
             <div class="col-md-12">
                 <div class="error-template">
-                    <h1>
-                        Oops!</h1>
-                    <h2>
-                        404 Not Found</h2>
-                   
+                    <h1>Oops!</h1>
+                    <h2>404 Not Found</h2>
+                    <p id="result"></p>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+    setTimeout(myURL, 3000);
+    var result = document.getElementById("result");
+    result.innerHTML = "<b> The page will redirect after delay of 3 seconds</b>";
+
+    function myURL() {
+        document.location.href = '<?= config_item('base_url')."home" ?>';
+    }
+    </script>
 </body>
 
 </html>
