@@ -9,7 +9,7 @@ class Migration_Users extends CI_Migration {
             'id' => array(
                     'type' => 'INT4',
                     'unsigned' => TRUE,
-                    'unique' => TRUE
+                    'auto_increment' => TRUE
             ),
             'first_name' => array(
                     'type' => 'VARCHAR',
