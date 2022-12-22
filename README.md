@@ -9,6 +9,8 @@ Cara instalasi awal
     cd public lalu enter<br>
     php index.php migrate latest production lalu enter
 3. Jalankan aplikasi 
-4. Tampilan project dibedakan menjadi 2 yaitu desktop dan mobile
+4. Tampilan project dibedakan menjadi 2 yaitu desktop dan mobile <br>
+
+Link Demo Project <a href='https://unicowebappproject.000webhostapp.com'> URL </a>
 
 
