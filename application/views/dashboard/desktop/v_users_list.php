@@ -23,7 +23,7 @@ $(document).ready(function(e) {
                     value.first_name + ' ' + value.last_name + '</div>';
                 users_list += '<div class="text-break" style="font-size: 10px;"> ' + value
                     .email + '</div></div>';
-                users_list += ' <div class="card-body text-right"><a href="<?= base_url('users_list/edit/')?>'+value.id+'" class="font-weight-bold"><i class="material-icons">edit</i></a><a href="#" class="button-delete font-weight-bold" data-id="'+value.id+'"><i class="material-icons">delete</i></a></div></div></div>';
+                users_list += ' <div class="card-body text-right">'+value.action+'</div></div></div>';
             });
             $('#users-list').append(users_list);
         }

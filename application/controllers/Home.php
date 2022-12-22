@@ -165,13 +165,18 @@ class Home extends Backend_Controller {
     {
         $this->output->unset_template();
         $data_ = array();
-        $data = $this->m_users->where(["id != '$this->_user_id'" => NULL])->findAll();
+        $data = $this->m_users->findAll();
         foreach($data as $row) {
+            $action = '';
+            if($row->id != $this->_user_id){
+                $action = '<a href="'.base_url('users_list/edit/').encrypt_url($row->id,$this->id_key).'" class="font-weight-bold"><i class="material-icons">edit</i></a><a href="#" class="button-delete font-weight-bold" data-id="'.encrypt_url($row->id,$this->id_key).'"><i class="material-icons">delete</i></a>';
+            }
             $data_[] = [
                 'id' => encrypt_url($row->id,$this->id_key),
                 'first_name' => $row->first_name,
                 'last_name' => $row->last_name,
                 'email' => $row->email,
+                'action' => $action
             ];
         }
         if($data){

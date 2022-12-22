@@ -1,0 +1,23 @@
+/application/config/database.php
+
+
+/Documentation/
+/user_guide/
+
+readme.rst
+license.txt
+
+composer.lock
+# IDE Files
+#-------------------------
+/nbproject/
+.idea/*
+
+## Sublime Text cache files
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+*.sublime-project
+/tests/tests/
+/tests/results/
