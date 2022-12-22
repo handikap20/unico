@@ -229,4 +229,4 @@ class Home extends Backend_Controller {
     }
 }
 
-/* End of file Dashboard.php */
+/* End of file Home.php */
