@@ -120,14 +120,14 @@ class Home extends Backend_Controller {
         $this->form_validation->set_rules('first_name', 'First Name', 'trim|required|min_length[5]|max_length[50]');
         $this->form_validation->set_rules('last_name', 'Last Name', 'trim|required|min_length[5]|max_length[50]');
         $_id = decrypt_url($id, $this->id_key);
-        if($id ==false) $this->form_validation->set_rules('email', 'Email', 'is_unique[users.email]|trim|required|min_length[5]|max_length[50]');
+        if($_id ==false) $this->form_validation->set_rules('email', 'Email', 'is_unique[users.email]|trim|required|min_length[5]|max_length[50]');
         $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]|max_length[35]');
         $this->form_validation->set_rules('confirm_password', 'Confirm Password', 'trim|required|min_length[8]|max_length[35]|matches[password]');
         $this->form_validation->set_error_delimiters(error_delimeter(1), error_delimeter(2));
         
         
         if ($this->form_validation->run() == TRUE) {
-            if ($id == FALSE) $id = null;
+            if ($_id == FALSE) $id = null;
 
          $this->return =  $this->m_users->push_to_data('password',$this->m_users->ghash($this->input->post('password')))
                                         ->save($_id);
@@ -197,14 +197,14 @@ class Home extends Backend_Controller {
 
     public function AjaxDel($id = null){
         $this->output->unset_template();
-        $id = decrypt_url($id, $this->id_key);
+        $_id = decrypt_url($id, $this->id_key);
       
-        if ($id !== FALSE) {
-            $this->return = $this->m_users->delete($id);
+        if ($_id != FALSE) {
+            $this->return = $this->m_users->delete($_id);
 
             if ($this->return) {
                 if ($this->loggedin == TRUE) {
-                    if($this->_user_id == $id) {
+                    if($this->_user_id == $_id) {
                         $this->m_users->unico_session_destroy();
                     }
                 }
